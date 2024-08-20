@@ -8,7 +8,17 @@ from test_framework.test_utils import enable_executor_hook
 
 def rearrange(A: List[int]) -> None:
     # TODO - you fill in here.
-    return
+    def swap(i, j):
+        A[i], A[j] = A[j], A[i]
+
+    for i in range(len(A)-1):
+        if i%2==0:
+            if A[i]>A[i+1]:
+                swap(i, i+1)
+        else:
+            if A[i]<A[i+1]:
+                swap(i, i+1)
+    return A
 
 
 @enable_executor_hook
