@@ -5,6 +5,17 @@ from test_framework import generic_test
 
 def apply_permutation(perm: List[int], A: List[int]) -> None:
     # TODO - you fill in here.
+    for i in range(len(A)):
+        # check if the element at index i has not been moved by checking if perm[i] is non-negative
+        next=i
+        while perm[next]>=0:
+            A[i], A[perm[next]] = A[perm[next]], A[i]
+            tmp=perm[next]
+            perm[next]-=len(perm)
+            next=tmp
+    
+    # Restore perm
+    perm = [a + len(perm) for a in perm]
     return
 
 
