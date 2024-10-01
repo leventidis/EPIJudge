@@ -24,7 +24,6 @@ def apply_permutation(perm: List[int], A: List[int]) -> None:
             tmp=perm[next]
             perm[next]-=len(perm)
             next=tmp
-
     return
 
 
